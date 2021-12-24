@@ -1,0 +1,31 @@
+.container {
+  padding: 1rem;
+  width: 100%;
+}
+.top-bar {
+  height: 0.5rem;
+  width: 2.7rem;
+  background-color: var(--blue);
+  margin-bottom: -0.4rem;
+}
+.heading-text {
+  color: var(--blue);
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+.table-heading {
+  background-color: var(--blue);
+  color: white;
+}
+
+td,
+th {
+  text-align: left;
+  padding: 1rem;
+}
+
+tr:nth-child(even) {
+  background-color: var(--light-gray);
+}

@@ -1,0 +1,18 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <app-header></app-header>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" [scrollEvents]="true">
+  <div class="filter-container" scrollX="true">
+    <app-button
+      *ngFor="let filter of filters"
+      [title]="filter.title"
+      [ngStyle]="{'margin': '0.4rem'}"
+      [isActive]="activeFilter.title == filter.title"
+      (click)="onClickFilter(filter)"
+    ></app-button>
+  </div>
+  <app-bookings-table></app-bookings-table>
+</ion-content>

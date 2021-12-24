@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="header">
+    <div class="top-bar"></div>
+    <h2 class="heading-text">Bookings</h2>
+  </div>
+  <table>
+    <tr class="table-heading">
+      <th>#</th>
+      <th>booking id</th>
+      <th>booking date</th>
+    </tr>
+
+    <tr *ngFor="let booking of bookings">
+      <td>1</td>
+      <td>{{ booking.booking_id }}</td>
+      <td>{{ booking.booking_date }}</td>
+    </tr>
+  </table>
+</div>

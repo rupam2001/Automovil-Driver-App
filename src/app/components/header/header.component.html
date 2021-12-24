@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="profile">
+    <img src="{{ user.profile_pic_url }}" alt="" />
+    <p>{{ user.name }}</p>
+  </div>
+  <div class="toggle-container">
+    <app-toggle-button
+      title="Location"
+      [ngStyle]="{ 'margin-right': '0.8rem' }"
+      (onToggleEvent)="onToggleLocation()"
+      [isChecked]="isLocationChecked"
+    ></app-toggle-button>
+    <app-toggle-button
+      title="Active"
+      (onToggleEvent)="onToggleActive()"
+      [isChecked]="isActiveChecked"
+    ></app-toggle-button>
+  </div>
+</div>

@@ -400,5 +400,25 @@ h4 {
   text-align: center;
   color: var(--gray);
   font-size: small;
-  padding: 0.4rem;
+  // padding: 0.4rem;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+ion-toggle {
+  --handle-spacing: 0px;
+  --handle-height: 100%;
+  --background: transparent;
+  --background-checked: transparent;
+
+  --border: 1px solid var(--gray);
+  --border-checked: 1px solid var(--blue);
+
+  --handle-background: var(--gray);
+  --handle-background-checked: var(--blue);
 }

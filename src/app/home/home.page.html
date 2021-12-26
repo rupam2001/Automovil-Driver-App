@@ -14,5 +14,9 @@
       (click)="onClickFilter(filter)"
     ></app-button>
   </div>
-  <app-bookings-table></app-bookings-table>
+  <app-bookings-table
+    [bookings]="currentBookingsContent"
+    [isLoading]="currentBookingsContent.length == 0"
+  ></app-bookings-table>
+  <app-bottom-modal isOpen="hasRquest" [Task]="Task"></app-bottom-modal>
 </ion-content>

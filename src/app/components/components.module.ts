@@ -5,6 +5,7 @@ import { HeaderComponent } from './header/header.component';
 import { ToggleButtonComponent } from './toggle-button/toggle-button.component';
 import { ButtonComponent } from './button/button.component';
 import { BookingsTableComponent } from './bookings-table/bookings-table.component';
+import { BottomModalComponent } from './bottom-modal/bottom-modal.component';
 
 @NgModule({
   declarations: [
@@ -12,6 +13,7 @@ import { BookingsTableComponent } from './bookings-table/bookings-table.componen
     ToggleButtonComponent,
     ButtonComponent,
     BookingsTableComponent,
+    BottomModalComponent,
   ],
   imports: [CommonModule, IonicModule],
   exports: [
@@ -19,6 +21,7 @@ import { BookingsTableComponent } from './bookings-table/bookings-table.componen
     ToggleButtonComponent,
     ButtonComponent,
     BookingsTableComponent,
+    BottomModalComponent,
   ],
 })
 export class ComponentsModule {}

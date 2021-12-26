@@ -1,0 +1,32 @@
+.container {
+  padding: 1rem;
+  padding-top: 3rem;
+}
+.top-bar {
+  height: 0.5rem;
+  width: 2rem;
+  background-color: var(--blue);
+  margin-bottom: -0.4rem;
+}
+.heading-text {
+  color: var(--blue);
+}
+.headin-time-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  p {
+    font-size: x-large;
+    color: var(--gray);
+  }
+}
+.description {
+  color: var(--gray);
+}
+.btn {
+  background-color: var(--blue);
+  color: white;
+  padding: 1rem;
+  min-width: 5rem;
+  font-weight: 700;
+}

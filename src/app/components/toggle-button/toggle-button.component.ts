@@ -16,9 +16,5 @@ export class ToggleButtonComponent implements OnInit {
   ngOnInit() {}
   onClick(checked: boolean) {
     this.onToggleEvent.emit();
-    setTimeout(() => {
-      this.isChecked = false;
-    }, 2000);
-    // alert(checked);
   }
 }

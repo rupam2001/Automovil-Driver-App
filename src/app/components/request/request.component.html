@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="request-container">
+    <div class="header">
+      <div class="top-bar"></div>
+      <div class="headin-time-wrapper">
+        <h2 class="heading-text">Request</h2>
+        <p class="time">{{ Task.timestamp }}</p>
+      </div>
+    </div>
+    <p class="description">
+      A car has to be picked up from <b>{{ Task.source_name }}</b> at
+      <b>
+        {{ Task.pickup_time }}
+      </b>
+      and has to be delivered at
+      <b>
+        {{ Task.destination_name }}
+      </b>
+    </p>
+    <div class="header">
+      <div class="top-bar"></div>
+      <div class="headin-time-wrapper">
+        <h2 class="heading-text">Details</h2>
+        <button class="btn" (click)="onClickCheck()">CHECK</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -6,6 +6,9 @@ import { ToggleButtonComponent } from './toggle-button/toggle-button.component';
 import { ButtonComponent } from './button/button.component';
 import { BookingsTableComponent } from './bookings-table/bookings-table.component';
 import { BottomModalComponent } from './bottom-modal/bottom-modal.component';
+import { RequestComponent } from './request/request.component';
+import { RequestDetailsComponent } from './request-details/request-details.component';
+import { MapComponent } from './map/map.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +17,9 @@ import { BottomModalComponent } from './bottom-modal/bottom-modal.component';
     ButtonComponent,
     BookingsTableComponent,
     BottomModalComponent,
+    RequestComponent,
+    RequestDetailsComponent,
+    MapComponent,
   ],
   imports: [CommonModule, IonicModule],
   exports: [
@@ -22,6 +28,9 @@ import { BottomModalComponent } from './bottom-modal/bottom-modal.component';
     ButtonComponent,
     BookingsTableComponent,
     BottomModalComponent,
+    RequestComponent,
+    RequestDetailsComponent,
+    MapComponent,
   ],
 })
 export class ComponentsModule {}

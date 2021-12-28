@@ -1,40 +1,43 @@
-<ion-modal [isOpen]="isOpen" [breakpoints]="[0.7]" [initialBreakpoint]="0.45">
-  <ng-template>
-    <ion-content>
-      <div class="container">
-        <div class="request-container" *ngIf="!isExpanded">
-          <div class="header">
-            <div class="top-bar"></div>
-            <div class="headin-time-wrapper">
-              <h2 class="heading-text">Request</h2>
-              <p class="time">{{ Task.timestamp }}</p>
-            </div>
-          </div>
-          <p class="description">
-            A car has to be picked up from <b>{{ Task.customer_name }}</b> at
-            <b>
-              {{ Task.pickup_time }}
-            </b>
-            and has to be delivered at
-            <b>
-              {{ Task.garage_name }}
-            </b>
-          </p>
-          <div class="header">
-            <div class="top-bar"></div>
-            <div class="headin-time-wrapper">
-              <h2 class="heading-text">Details</h2>
-              <button class="btn" (click)="onClickCheck()">CHECK</button>
-            </div>
+<ion-modal
+  [isOpen]="isOpen"
+  [breakpoints]="[0.45, 0.7]"
+  [initialBreakpoint]="0.45"
+  (didDismiss)="didDismiss()"
+>
+  <ng-template> </ng-template>
+</ion-modal>
+
+<!-- <div class="container">
+      <div class="request-container" *ngIf="!isExpanded">
+        <div class="header">
+          <div class="top-bar"></div>
+          <div class="headin-time-wrapper">
+            <h2 class="heading-text">Request</h2>
+            <p class="time">{{ Task.timestamp }}</p>
           </div>
         </div>
-        <div class="details-container" *ngIf="isExpanded">
-          <span class="field">
-            <b>Name: </b>
-            {{ Task.customer_name }}
-          </span>
+        <p class="description">
+          A car has to be picked up from <b>{{ Task.customer_name }}</b> at
+          <b>
+            {{ Task.pickup_time }}
+          </b>
+          and has to be delivered at
+          <b>
+            {{ Task.garage_name }}
+          </b>
+        </p>
+        <div class="header">
+          <div class="top-bar"></div>
+          <div class="headin-time-wrapper">
+            <h2 class="heading-text">Details</h2>
+            <button class="btn" (click)="onClickCheck()">CHECK</button>
+          </div>
         </div>
       </div>
-    </ion-content>
-  </ng-template>
-</ion-modal>
+      <div class="details-container" *ngIf="isExpanded">
+        <span class="field">
+          <b>Name: </b>
+          {{ Task.customer_name }}
+        </span>
+      </div>
+    </div> -->

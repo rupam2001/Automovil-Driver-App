@@ -29,3 +29,20 @@ th {
 tr:nth-child(even) {
   background-color: var(--light-gray);
 }
+
+.bottom {
+  display: flex;
+  width: 100%;
+  padding: 1rem;
+  // justify-content: flex-end;
+  align-items: center;
+  p {
+    flex: 1;
+    color: var(--gray);
+  }
+  ion-icon {
+    color: var(--blue);
+    font-size: xx-large;
+    margin-left: 1rem;
+  }
+}

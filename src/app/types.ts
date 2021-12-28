@@ -13,13 +13,14 @@ export type BookingsType = {
 };
 
 export type TaskType = {
-  id: string;
-  customer_name: string;
-  customer_phone_number: string;
-  garage_name: string;
-  customer_location: string;
-  garage_location: string;
-  garage_phone_number: string;
+  booking_id: string;
+  category: 'Customer-to-Garage' | 'Garage-to-Customer' | 'Garage-to-Garage';
+  source_name: string;
+  source_phone_number: string;
+  source_location: string;
+  destination_name: string;
+  destination_phone_number: string;
+  destination_location: string;
   pickup_time: string;
   timestamp: string;
 };

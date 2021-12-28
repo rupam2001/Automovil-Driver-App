@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, ContentChildren, Input, OnInit } from '@angular/core';
 import { TaskType } from 'src/app/types';
 
 @Component({
@@ -7,14 +7,17 @@ import { TaskType } from 'src/app/types';
   styleUrls: ['./bottom-modal.component.scss'],
 })
 export class BottomModalComponent implements OnInit {
-  @Input() isOpen: boolean = false;
   @Input() Task: TaskType;
   isExpanded: boolean = false;
 
   constructor() {}
 
   ngOnInit() {}
+
   onClickCheck() {
     this.isExpanded = true;
+  }
+  didDismiss() {
+    //modal has been dismissed
   }
 }

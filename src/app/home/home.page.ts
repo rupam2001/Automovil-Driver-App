@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
-import { Filters } from '../constants';
+import { ModalController } from '@ionic/angular';
+import { RequestDetailsComponent } from '../components/request-details/request-details.component';
+import { RequestComponent } from '../components/request/request.component';
+import { Filters, MODALS } from '../constants';
 import { BookingsApiService } from '../services/bookings-api.service';
 import { GlobalStatesService } from '../services/global-states.service';
 import { UiServiceService } from '../services/ui-service.service';
@@ -15,22 +18,25 @@ export class HomePage {
   activeFilter: FilterType;
   currentBookingsContent: BookingsType[] = [];
   Task: TaskType = {
-    customer_name: 'Rupam Jyoti Das',
-    customer_phone_number: '8638047859',
-    customer_location: 'Machorhat, Jorhat, 785001',
-    garage_name: 'Lamborghini garage',
-    garage_location: 'JEC road, Jorhat, 785007',
-    garage_phone_number: '9876543210',
+    source_name: 'Rupam Jyoti Das',
+    source_phone_number: '8638047859',
+    source_location: 'Machorhat, Jorhat, 785001',
+    destination_name: 'Lamborghini Garage ',
+    destination_location: 'JEC road, Jorhat, 785007',
+    destination_phone_number: '9876543210',
     timestamp: '4:00 pm',
     pickup_time: '5:30pm',
-    id: '123',
+    booking_id: '123',
+    category: 'Customer-to-Garage',
   };
   hasRequest: boolean = true;
+  currentModel: string = MODALS.None;
 
   constructor(
     private globalStatesService: GlobalStatesService,
     private uiService: UiServiceService,
-    private bookingsApiService: BookingsApiService
+    private bookingsApiService: BookingsApiService,
+    private modalController: ModalController
   ) {
     this.globalStatesService
       .getCurrentActiveFilter()
@@ -52,5 +58,42 @@ export class HomePage {
   onClickFilter(filter: FilterType) {
     this.globalStatesService.setCurrentActiveFilter(filter);
     this.uiService.setActiveFilter(filter);
+  }
+
+  onClickCheckRequest() {}
+
+  async showModalAsync() {
+    const modal = await this.modalController.create({
+      component: RequestComponent,
+      componentProps: {
+        Task: this.Task,
+        modalController: this.modalController,
+      },
+      backdropDismiss: false,
+      initialBreakpoint: 0.4,
+      cssClass: 'modal-class',
+    });
+    modal.present();
+    modal.onDidDismiss().then((data) => {
+      this.showDetailsModalAsync();
+    });
+  }
+  async showDetailsModalAsync() {
+    const modal = await this.modalController.create({
+      component: RequestDetailsComponent,
+      componentProps: {
+        Task: this.Task,
+        modalController: this.modalController,
+      },
+      backdropDismiss: false,
+      initialBreakpoint: 0.8,
+      cssClass: 'modal-class',
+    });
+    modal.present();
+    modal.onDidDismiss().then((data) => {});
+  }
+
+  ionViewWillEnter() {
+    // this.showModalAsync();
   }
 }

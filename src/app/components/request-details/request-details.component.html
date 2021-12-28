@@ -1,0 +1,53 @@
+<div class="container">
+  <div class="request-container">
+    <div class="header">
+      <div class="top-bar"></div>
+      <div class="headin-time-wrapper">
+        <h2 class="heading-text">Details</h2>
+        <p class="time">{{ Task.timestamp }}</p>
+      </div>
+    </div>
+    <div class="fields-container">
+      <div *ngIf="Task.category == Categories.CtoG">
+        <p class="field">
+          Name: <b>{{ Task.source_name }}</b>
+        </p>
+        <p class="field">Phone number: {{ Task.source_phone_number }}</p>
+        <p class="field">
+          Garage name: <b class="field-blue">{{ Task.destination_name }}</b>
+        </p>
+        <p class="field">
+          <b>Customer Location:</b> {{ Task.source_location }}
+        </p>
+
+        <p class="field">
+          <b>Garage Location:</b> {{ Task.destination_location }}
+        </p>
+        <p class="field">
+          <b>Garage Phone: </b>{{ Task.destination_phone_number }}
+        </p>
+        <p class="field">
+          <b>Pick-up time: </b
+          ><span class="field-blue">{{ Task.pickup_time }}</span>
+        </p>
+      </div>
+    </div>
+    <div class="map-container">
+      <app-map></app-map>
+    </div>
+    <div class="actions-container">
+      <ion-icon
+        name="close-circle"
+        size="large"
+        class="cancel-btn"
+        (click)="onClickReject()"
+      ></ion-icon>
+      <ion-icon
+        name="checkmark-circle"
+        size="large"
+        class="accept-btn"
+        (click)="onClickAccept()"
+      ></ion-icon>
+    </div>
+  </div>
+</div>

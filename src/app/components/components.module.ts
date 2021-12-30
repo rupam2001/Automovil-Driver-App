@@ -9,6 +9,7 @@ import { BottomModalComponent } from './bottom-modal/bottom-modal.component';
 import { RequestComponent } from './request/request.component';
 import { RequestDetailsComponent } from './request-details/request-details.component';
 import { MapComponent } from './map/map.component';
+import { CameraComponent } from './camera/camera.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { MapComponent } from './map/map.component';
     RequestComponent,
     RequestDetailsComponent,
     MapComponent,
+    CameraComponent,
   ],
   imports: [CommonModule, IonicModule],
   exports: [
@@ -31,6 +33,7 @@ import { MapComponent } from './map/map.component';
     RequestComponent,
     RequestDetailsComponent,
     MapComponent,
+    CameraComponent,
   ],
 })
 export class ComponentsModule {}

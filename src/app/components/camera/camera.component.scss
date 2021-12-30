@@ -1,0 +1,32 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  height: fit-content;
+}
+.image-name {
+  flex: 1;
+  border-bottom-style: solid;
+  height: 2rem;
+  margin-right: 1rem;
+  border-bottom-color: var(--gray);
+  border-bottom-width: 2px;
+}
+.disabled {
+  color: var(--gray);
+}
+.unabled {
+  color: black;
+}
+ion-button {
+  --background: var(--blue);
+  --border-radius: 0;
+}
+.title-wrapper {
+  display: flex;
+  align-items: center;
+  color: var(--gray);
+  ion-icon {
+    margin-right: 0.5rem;
+    font-size: large;
+  }
+}

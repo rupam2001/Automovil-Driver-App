@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 import { ModalController } from '@ionic/angular';
-import { RequestDetailsComponent } from '../components/request-details/request-details.component';
-import { RequestComponent } from '../components/request/request.component';
-import { Filters, MODALS } from '../constants';
-import { BookingsApiService } from '../services/bookings-api.service';
-import { GlobalStatesService } from '../services/global-states.service';
-import { UiServiceService } from '../services/ui-service.service';
-import { BookingsType, FilterType, TaskType } from '../types';
+import { RequestDetailsComponent } from '../../components/request-details/request-details.component';
+import { RequestComponent } from '../../components/request/request.component';
+import { Filters, MODALS } from '../../constants';
+import { BookingsApiService } from '../../services/bookings-api.service';
+import { GlobalStatesService } from '../../services/global-states.service';
+import { UiServiceService } from '../../services/ui-service.service';
+import { BookingsType, FilterType, TaskType } from '../../types';
 
 @Component({
   selector: 'app-home',
@@ -30,7 +30,6 @@ export class HomePage {
     category: 'Customer-to-Garage',
   };
   hasRequest: boolean = true;
-  currentModel: string = MODALS.None;
 
   constructor(
     private globalStatesService: GlobalStatesService,

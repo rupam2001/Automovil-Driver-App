@@ -1,0 +1,28 @@
+.header {
+  padding: 1.5rem;
+}
+.top-bar {
+  height: 0.5rem;
+  width: 2rem;
+  background-color: var(--blue);
+  margin-bottom: -0.4rem;
+}
+.heading-text {
+  color: var(--blue);
+  font-weight: bold;
+}
+.headin-time-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  p {
+    font-size: x-large;
+    color: var(--gray);
+  }
+}
+.container {
+  padding: 1rem;
+  .camera {
+    padding: 2rem;
+  }
+}

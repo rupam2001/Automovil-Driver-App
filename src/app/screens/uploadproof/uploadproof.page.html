@@ -1,0 +1,20 @@
+<ion-content>
+  <div class="header">
+    <div class="top-bar"></div>
+    <div class="headin-time-wrapper">
+      <h2 class="heading-text">Upload Proof</h2>
+    </div>
+  </div>
+  <div class="container">
+    <app-camera
+      *ngFor="let fix of fixesList"
+      class="camera"
+      [title]="fix"
+    ></app-camera>
+  </div>
+  <div class="container">
+    <ion-button disabled="true" class="large-btn btn-outline"
+      >Upload</ion-button
+    >
+  </div>
+</ion-content>

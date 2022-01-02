@@ -1,4 +1,4 @@
-package io.ionic.starter;
+package com.automovil.driverapp;
 
 import com.getcapacitor.BridgeActivity;
 

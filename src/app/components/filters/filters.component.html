@@ -1,0 +1,10 @@
+<div class="filter-container" scrollX="true">
+  <app-button
+    *ngFor="let filter of filters"
+    [title]="filter.title"
+    [ngStyle]="{ margin: '0.4rem' }"
+    [isActive]="activeFilter.title == filter.title"
+    (click)="onClickFilter(filter)"
+    [isDisabled]="disabledFilter.title == filter.title"
+  ></app-button>
+</div>

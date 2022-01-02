@@ -46,3 +46,12 @@ tr:nth-child(even) {
     margin-left: 1rem;
   }
 }
+
+.loader-container {
+  text-align: center;
+  height: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  --color: var(--blue);
+}

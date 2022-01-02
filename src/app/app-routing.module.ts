@@ -14,8 +14,27 @@ const routes: Routes = [
   },
   {
     path: 'uploadproof',
-    loadChildren: () => import('./screens/uploadproof/uploadproof.module').then( m => m.UploadproofPageModule)
+    loadChildren: () =>
+      import('./screens/uploadproof/uploadproof.module').then(
+        (m) => m.UploadproofPageModule
+      ),
   },
+  // {
+  //   path: 'current-booking',
+  //   loadChildren: () => import('./screens/current-booking/current-booking.module').then( m => m.CurrentBookingPageModule)
+  // },
+  // {
+  //   path: 'old-bookings',
+  //   loadChildren: () => import('./screens/old-bookings/old-bookings.module').then( m => m.OldBookingsPageModule)
+  // },
+  // {
+  //   path: 'old-bookings',
+  //   loadChildren: () => import('./screens/old-bookings/old-bookings.module').then( m => m.OldBookingsPageModule)
+  // },
+  // {
+  //   path: 'current-booking',
+  //   loadChildren: () => import('./screens/current-booking/current-booking.module').then( m => m.CurrentBookingPageModule)
+  // },
 ];
 
 @NgModule({

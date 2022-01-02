@@ -1,3 +1,7 @@
-<button class="btn" [ngClass]="{ 'btn-active': isActive }">
+<button
+  class="btn"
+  [ngClass]="{ 'btn-active': isActive, 'btn-disabled': isDisabled }"
+  [disabled]="isDisabled"
+>
   {{ title }}
 </button>

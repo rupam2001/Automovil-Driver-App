@@ -1,16 +1,20 @@
 .btn {
   padding: 1rem;
   background-color: transparent;
-  border: 1px solid grey;
+  border: 1px solid var(--gray);
   border-radius: 1.5rem;
   min-width: 5rem;
   font-size: medium;
   outline: none;
-  color: gray;
+  color: var(--gray);
   font-size: small;
 }
 .btn-active {
   background-color: #042ec2;
   border: transparent;
+  color: white;
+}
+.btn-disabled {
+  background-color: var(--gray);
   color: white;
 }

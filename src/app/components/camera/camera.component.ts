@@ -21,8 +21,9 @@ export class CameraComponent implements OnInit {
   async takePicture(): Promise<string> {
     const image = await Camera.getPhoto({
       quality: 90,
-      allowEditing: true,
+      allowEditing: false,
       resultType: CameraResultType.Base64,
+      saveToGallery: true,
     });
 
     // image.webPath will contain a path that can be set as an image src.
@@ -30,6 +31,10 @@ export class CameraComponent implements OnInit {
     // passed to the Filesystem API to read the raw data of the image,
     // if desired (or pass resultType: CameraResultType.Base64 to getPhoto)
     var image64 = image.base64String;
+    var imagePath = image.path;
+
+    this.imageText = imagePath;
+
     return image64;
   }
 }

@@ -3,7 +3,7 @@
     <div class="top-bar"></div>
     <h2 class="heading-text">Bookings</h2>
   </div>
-  <table>
+  <table *ngIf="!isLoading">
     <tr class="table-heading">
       <th>#</th>
       <th>booking id</th>
@@ -16,7 +16,10 @@
       <td>{{ booking.booking_date }}</td>
     </tr>
   </table>
-  <div class="bottom">
+  <div class="loader-container" *ngIf="isLoading">
+    <ion-spinner name="crescent" class="loader"></ion-spinner>
+  </div>
+  <div class="bottom" *ngIf="!isLoading">
     <p>Page-1</p>
     <ion-icon name="caret-back-circle"></ion-icon>
     <ion-icon name="caret-forward-circle"></ion-icon>

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { NotificationService } from './services/notification.service';
 
 @Component({
   selector: 'app-root',
@@ -7,7 +8,11 @@ import { Router } from '@angular/router';
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
-  constructor(private router: Router) {
-    router.navigateByUrl('uploadproof'); //@testing
+  constructor(
+    private router: Router,
+    private notificationService: NotificationService
+  ) {
+    // router.navigateByUrl('uploadproof'); //@testing
+    this.notificationService.initializePushNotification();
   }
 }

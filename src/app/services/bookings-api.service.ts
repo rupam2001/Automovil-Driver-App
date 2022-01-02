@@ -15,6 +15,8 @@ export class BookingsApiService {
       }, 2000);
     });
   }
+  async acceptRequestAsync() {}
+  async rejectRequestAsync() {}
 }
 
 const demo: BookingsType[] = [

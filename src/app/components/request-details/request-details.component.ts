@@ -13,25 +13,16 @@ export class RequestDetailsComponent implements OnInit {
   @Input() modalController: ModalController;
   Categories = TASKCATEGORY;
 
-  constructor(private toastController: ToastController) {}
+  constructor() {}
 
   ngOnInit() {}
 
   onClickReject() {
-    this.modalController.dismiss();
-    this.showToastAsync('You have rejected the request.');
+    this.modalController.dismiss({ accept: false });
+    // this.showToastAsync('You have rejected the request.');
   }
   onClickAccept() {
-    this.modalController.dismiss();
-    this.showToastAsync('You Have Accepted the Request');
-  }
-
-  showToastAsync(message: string, duration: number = 2000) {
-    this.toastController
-      .create({
-        message,
-        duration,
-      })
-      .then((toast) => toast.present());
+    this.modalController.dismiss({ accept: true });
+    // this.showToastAsync('You Have Accepted the Request');
   }
 }

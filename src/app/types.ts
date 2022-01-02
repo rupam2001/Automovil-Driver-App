@@ -23,4 +23,5 @@ export type TaskType = {
   destination_location: string;
   pickup_time: string;
   timestamp: string;
+  expireTime: string;
 };

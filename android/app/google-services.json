@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "607280937424",
+    "project_id": "automovil-driver-app",
+    "storage_bucket": "automovil-driver-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:607280937424:android:f13ec4c04da97712bea1d5",
+        "android_client_info": {
+          "package_name": "com.automovil.driverapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "607280937424-lcde4cuies6dsfnl70dhiljbvbuqpu34.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAPOPpkRPpTQrToAkTeiWC-5IUDZWiqBNo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "607280937424-lcde4cuies6dsfnl70dhiljbvbuqpu34.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

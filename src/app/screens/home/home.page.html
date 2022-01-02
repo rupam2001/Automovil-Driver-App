@@ -5,22 +5,20 @@
 </ion-header>
 
 <ion-content [fullscreen]="true" [scrollEvents]="true">
-  <div class="filter-container" scrollX="true">
+  <!-- <div class="filter-container" scrollX="true">
     <app-button
       *ngFor="let filter of filters"
       [title]="filter.title"
       [ngStyle]="{'margin': '0.4rem'}"
       [isActive]="activeFilter.title == filter.title"
       (click)="onClickFilter(filter)"
+      [isDisabled]="disabledFilter == filter.title"
     ></app-button>
-  </div>
-  <app-bookings-table
+  </div> -->
+  <app-filters></app-filters>
+  <!-- <app-bookings-table
     [bookings]="currentBookingsContent"
     [isLoading]="currentBookingsContent.length == 0"
-  ></app-bookings-table>
-  <!-- <app-bottom-modal
-    isOpen="hasRquest"
-    [Task]="Task"
-    isExpanded="false"
-  ></app-bottom-modal> -->
+  ></app-bookings-table> -->
+  <router-outlet></router-outlet>
 </ion-content>

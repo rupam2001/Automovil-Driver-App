@@ -1,0 +1,39 @@
+<div>
+  <div class="bar"></div>
+  <h3 class="cardHeading" (click)="showContent = !showContent">{{header}}
+    <span class="iconContainer" *ngIf="!showContent">
+      <ion-icon name="caret-down-circle"></ion-icon>
+    </span>
+
+    <span class="iconContainer2" *ngIf="showContent">
+      <ion-icon name="caret-up-circle"></ion-icon>
+    </span>
+  </h3>
+  <div *ngIf="showContent">
+    <div class="mapContainer">
+      <app-map></app-map>
+    </div>
+
+    <div class="detailsContainer">
+      <div class="fieldContainer">
+        <span class="fieldName">Name : </span>
+        <span class="fieldValue">value</span>
+      </div>
+
+      <div class="fieldContainer">
+        <span class="fieldName">Booking Id : </span>
+        <span class="fieldValue">#12345</span>
+      </div>
+
+      <div class="fieldContainer">
+        <span class="fieldName">Phone number : </span>
+        <span class="fieldValue">9876543210</span>
+      </div>
+
+      <div class="fieldContainer">
+        <span class="fieldName">Destination : </span>
+        <span class="fieldValue">Some place, in some street</span>
+      </div>
+    </div>
+  </div>
+</div>

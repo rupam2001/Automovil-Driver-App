@@ -2,5 +2,7 @@
   <app-bookings-table
     [bookings]="currentBookingsContent"
     [isLoading]="currentBookingsContent.length == 0"
+    (onClickNextPageEvent)="onClickNextPage()"
+    (onClickPrevPageEvent)="onClickPrevPage()"
   ></app-bookings-table>
 </ion-content>

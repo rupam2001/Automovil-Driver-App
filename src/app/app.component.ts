@@ -12,7 +12,7 @@ export class AppComponent {
     private router: Router,
     private notificationService: NotificationService
   ) {
-    // router.navigateByUrl('uploadproof'); //@testing
+    // this.router.navigateByUrl('uploadproof'); //@testing
     this.notificationService.initializePushNotification();
   }
 }

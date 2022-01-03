@@ -53,6 +53,7 @@ export class HomePage {
       this.hasRequest = true;
       this.showModalAsync();
     });
+
     this.uiService.checkForPendingNotification();
   }
 
@@ -101,7 +102,13 @@ export class HomePage {
     await this.storageService.remove(StorageKeys.NotificationDataKey);
     // api call for accept
     await this.bookingsApiService.acceptRequestAsync();
-    // unable the Current section and navigate to there
+    // unable the Current section set currentfilter to Current and navigate to there
+    this.uiService.setDisabledFilter({ title: '<none>' });
+    this.globalStatesService.setCurrentActiveFilter({ title: 'Current' });
+    this.uiService.setActiveFilter({ title: 'Current' });
+    this.router.navigateByUrl('/home/current-booking');
+
+    //show the toast
     this.showToastAsync('Request Accepted');
   }
   async handleRejectAsync() {

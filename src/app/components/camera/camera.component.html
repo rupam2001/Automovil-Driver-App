@@ -1,5 +1,5 @@
 <div>
-  <div class="title-wrapper">
+  <div class="title-wrapper" [ngClass]="{ done: btnText == 'RETAKE' }">
     <ion-icon name="ellipse"></ion-icon>
     <h4>{{ title }}</h4>
   </div>
@@ -11,8 +11,10 @@
         unabled: imageText != '*open camera to click photo'
       }"
     >
-      {{ imageText }}
+      <p>
+        {{ imageText }}
+      </p>
     </div>
-    <ion-button (click)="onClickCameraAsync()">Camera</ion-button>
+    <ion-button (click)="onClickCameraAsync()">{{ btnText }}</ion-button>
   </div>
 </div>

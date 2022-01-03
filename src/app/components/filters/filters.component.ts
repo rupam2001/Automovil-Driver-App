@@ -14,7 +14,7 @@ export class FiltersComponent implements OnInit {
   filters = Filters;
   activeFilter: FilterType;
   currentBookingsContent: BookingsType[] = [];
-  disabledFilter: FilterType = { title: 'Current>' };
+  disabledFilter: FilterType = { title: 'Current' }; //by default
   constructor(
     private globalStatesService: GlobalStatesService,
     private uiService: UiServiceService,
@@ -30,17 +30,22 @@ export class FiltersComponent implements OnInit {
       // navigate to Current page or Home accordingly
       if (_newFilter.title == 'Current') {
         // navigate to Current page
-        // alert('yoo');
         this.router.navigateByUrl('/home/current-booking', { state: {} });
       } else {
         // navigate to Home page
         this.router.navigateByUrl('home');
       }
     });
+    this.uiService
+      .onDisabledFilterChange()
+      .subscribe((_filter) => (this.disabledFilter = _filter));
   }
   ngOnInit() {}
   onClickFilter(filter: FilterType) {
     this.globalStatesService.setCurrentActiveFilter(filter);
     this.uiService.setActiveFilter(filter);
+    if (filter.title == 'Custom') this.pickCustomDate();
   }
+
+  pickCustomDate() {}
 }

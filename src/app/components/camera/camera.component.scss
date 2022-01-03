@@ -6,10 +6,14 @@
 .image-name {
   flex: 1;
   border-bottom-style: solid;
-  height: 2rem;
+  height: 3rem;
   margin-right: 1rem;
   border-bottom-color: var(--gray);
   border-bottom-width: 2px;
+  max-width: 70%;
+  overflow: hidden;
+  display: inline;
+  word-wrap: normal;
 }
 .disabled {
   color: var(--gray);
@@ -29,4 +33,7 @@ ion-button {
     margin-right: 0.5rem;
     font-size: large;
   }
+}
+.done {
+  color: var(--blue);
 }

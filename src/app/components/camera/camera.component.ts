@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Camera, CameraResultType } from '@capacitor/camera';
 
 @Component({
@@ -10,19 +10,25 @@ export class CameraComponent implements OnInit {
   constructor() {}
 
   imageText: string = '*open camera to click photo';
+  btnText = 'CAMERA';
+
   @Input() title = '';
+
+  @Output() onImageCaptured: EventEmitter<any> = new EventEmitter();
 
   ngOnInit() {}
 
   async onClickCameraAsync() {
-    const img = await this.takePicture();
+    const { filePath } = await this.takePicture();
+    this.onImageCaptured.emit({ filePath, fix: this.title });
+    this.btnText = 'RETAKE';
   }
 
-  async takePicture(): Promise<string> {
+  async takePicture(): Promise<{ filePath: string }> {
     const image = await Camera.getPhoto({
       quality: 90,
       allowEditing: false,
-      resultType: CameraResultType.Base64,
+      resultType: CameraResultType.Uri,
       saveToGallery: true,
     });
 
@@ -32,9 +38,8 @@ export class CameraComponent implements OnInit {
     // if desired (or pass resultType: CameraResultType.Base64 to getPhoto)
     var image64 = image.base64String;
     var imagePath = image.path;
-
-    this.imageText = imagePath;
-
-    return image64;
+    const len = imagePath.split('/').length;
+    this.imageText = imagePath.split('/')[len - 1];
+    return { filePath: imagePath };
   }
 }

@@ -10,11 +10,23 @@
       *ngFor="let fix of fixesList"
       class="camera"
       [title]="fix"
+      (onImageCaptured)="onImageCaptured($event)"
     ></app-camera>
   </div>
   <div class="container">
-    <ion-button disabled="true" class="large-btn btn-outline"
-      >Upload</ion-button
-    >
+    <ion-button
+      class="large-btn btn-outline"
+      [ngClass]="{'btn-blue': areAllCaptured}"
+      (click)="onClickUploadAsync()"
+      *ngIf="!isUploading"
+      >UPLOAD
+    </ion-button>
+    <ion-button
+      class="large-btn btn-outline"
+      [ngClass]="{'btn-blue': areAllCaptured}"
+      (click)="onClickUploadAsync()"
+      *ngIf="isUploading"
+      ><ion-spinner name="crescent" class="spinner"></ion-spinner>
+    </ion-button>
   </div>
 </ion-content>

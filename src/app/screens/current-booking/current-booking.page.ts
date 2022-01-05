@@ -8,6 +8,7 @@ import { BookingsType } from 'src/app/types';
 })
 export class CurrentBookingPage implements OnInit {
   currentBookingsContent: BookingsType[] = [];
+  header: string = 'Bookings Details';
   constructor() {}
 
   ngOnInit() {}

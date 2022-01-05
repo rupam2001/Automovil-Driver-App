@@ -12,6 +12,7 @@ import { MapComponent } from './map/map.component';
 import { CameraComponent } from './camera/camera.component';
 import { FiltersComponent } from './filters/filters.component';
 import { DetailsCardComponent } from './details-card/details-card.component';
+import { TrackerComponent } from './tracker/tracker.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { DetailsCardComponent } from './details-card/details-card.component';
     MapComponent,
     CameraComponent,
     FiltersComponent,
-    DetailsCardComponent
+    DetailsCardComponent,
+    TrackerComponent
   ],
   imports: [CommonModule, IonicModule],
   exports: [
@@ -39,7 +41,8 @@ import { DetailsCardComponent } from './details-card/details-card.component';
     MapComponent,
     CameraComponent,
     FiltersComponent,
-    DetailsCardComponent
+    DetailsCardComponent,
+    TrackerComponent
   ],
 })
 export class ComponentsModule {}

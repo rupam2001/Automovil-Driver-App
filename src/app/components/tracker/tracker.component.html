@@ -1,0 +1,63 @@
+<div class="mainContainer">
+  <div class="bar"></div>
+  <h3 class="cardHeading" (click)="showContent = !showContent">Tracking details
+    <span class="iconContainer" *ngIf="!showContent">
+      <ion-icon name="caret-down-circle"></ion-icon>
+    </span>
+
+    <span class="iconContainer2" *ngIf="showContent">
+      <ion-icon name="caret-up-circle"></ion-icon>
+    </span>
+  </h3>
+
+  <!-- trackings -->
+  <div class="trackingContainer" *ngIf="showContent">
+    <div class="taskContainer">
+      <div class="progressContainer">
+        <div class="circle active"></div>
+        <div class="firstbar active"></div>
+      </div>
+      <div class="details">
+        <div class="taskName activeText">
+          Some name
+        </div>
+        <div class="action">
+          <!-- <button class="btn">Done</button> -->
+          <ion-icon class="icon" name="checkmark-done-circle-outline"></ion-icon>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="taskContainer">
+      <div class="progressContainer">
+        <div class="circle inactive"></div>
+        <div class="bar inactive"></div>
+      </div>
+      <div class="details">
+        <div class="taskName inactiveText">
+          Some name
+        </div>
+        <div class="action">
+          <button class="btn">Done</button>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="taskContainer">
+      <div class="progressContainer">
+        <div class="circle inactive"></div>
+        <div class="lastbar inactive"></div>
+      </div>
+      <div class="details">
+        <div class="taskName inactiveText">
+          Some name
+        </div>
+        <div class="action">
+          <!-- <button class="btn">Done</button> -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -21,7 +21,9 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {}
 
   onToggleLocation() {
-    // this.isLocationChecked = !this.isLocationChecked;
+    this.isLocationChecked = !this.isLocationChecked;
   }
-  onToggleActive() {}
+  onToggleActive() {
+    this.isActiveChecked = !this.isActiveChecked;
+  }
 }

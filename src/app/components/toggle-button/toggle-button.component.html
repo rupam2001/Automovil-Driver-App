@@ -4,9 +4,8 @@
     id="cb4"
     type="checkbox"
     [(ngModel)]="isChecked"
-    (click)="onClick($event.target.checked)"
     [checked]="isChecked"
   />
-  <label class="tgl-btn" for="cb4"></label>
+  <label class="tgl-btn" (click)="onClick($event.target.checked)"></label>
   <span class="title">{{ title }}</span>
 </li>

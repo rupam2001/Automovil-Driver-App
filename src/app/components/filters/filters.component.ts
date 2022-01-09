@@ -14,7 +14,7 @@ export class FiltersComponent implements OnInit {
   filters = Filters;
   activeFilter: FilterType;
   currentBookingsContent: BookingsType[] = [];
-  disabledFilter: FilterType = { title: 'Current' }; //by default
+  disabledFilter: FilterType = { title: 'Current>' }; //by default
   constructor(
     private globalStatesService: GlobalStatesService,
     private uiService: UiServiceService,

@@ -129,6 +129,7 @@ export class HomePage {
   }
   ionViewWillEnter() {
     // this.router.navigateByUrl('home/current-booking');
+    // this.router.navigateByUrl('car-details');
   }
 }
 

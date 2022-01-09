@@ -1,6 +1,14 @@
-<ion-content>   
-    <div class="container">
-        <app-details-card [header]="header"></app-details-card>
-        <app-tracker></app-tracker>
-    </div>
+<ion-content>
+  <div class="container">
+    <h3 class="cardHeading">{{headMsg}}</h3>
+    <app-details-card [header]="header"></app-details-card>
+    <app-tracker></app-tracker>
+    <ion-button
+      class="large-btn btn-outline"
+      [ngClass]="{'btn-blue': unAbleNotificationBtn}"
+      *ngIf="showNotificationBtn"
+      (click)="onClickSendNotification()"
+      >Send Notification</ion-button
+    >
+  </div>
 </ion-content>

@@ -1,104 +1,100 @@
 .bar {
-    background-color: blue;
-    height: 0.4rem;
-    width: 3rem;
+  background-color: blue;
+  height: 0.4rem;
+  width: 3rem;
 }
 
-.cardHeading{
-    padding: 0;
-    margin: 0 auto;
-    color:blue;
-    font-weight: bold;
-    font-size: 1.7rem;
+.cardHeading {
+  padding: 0;
+  margin: 0 auto;
+  color: blue;
+  font-weight: bold;
+  font-size: 1.7rem;
 }
 
-.iconContainer{
-    font-size: 1.3rem;
-    margin: 0 0.5rem;
-    color: darkgrey;
+.iconContainer {
+  font-size: 1.3rem;
+  margin: 0 0.5rem;
+  color: darkgrey;
 }
-.iconContainer2{
-    font-size: 1.3rem;
-    margin: 0 0.5rem;
-    color: blue;
+.iconContainer2 {
+  font-size: 1.3rem;
+  margin: 0 0.5rem;
+  color: blue;
 }
 
 .trackingContainer {
-    padding: 1rem 2rem;
+  padding: 1rem 2rem;
 
-    .taskContainer {
-        font-size: 0.9rem;
-        display: flex;
-        flex-direction: row;
+  .taskContainer {
+    font-size: 0.9rem;
+    display: flex;
+    flex-direction: row;
+    height: 3rem;
+
+    .progressContainer {
+      margin: 0 1rem 0 0;
+
+      .circle {
+        height: 1rem;
+        width: 1rem;
+        border-radius: 50%;
+      }
+
+      .bar {
+        width: 0.2rem;
         height: 3rem;
+        transform: translate(0.4rem, -2rem);
+      }
 
-        .progressContainer {
-            margin: 0 1rem 0 0;
-            
-            .circle {
-                height: 1rem;
-                width: 1rem;
-                border-radius: 50%;
-            }
+      .firstbar {
+        width: 0.2rem;
+        height: 1rem;
+        transform: translate(0.4rem, 0rem);
+      }
 
-            .bar {
-                width:0.2rem;
-                height:3rem;
-                transform: translate(0.4rem, -2rem);
-            }
+      .lastbar {
+        width: 0.2rem;
+        height: 1rem;
+        transform: translate(0.4rem, -2rem);
+      }
 
-            .firstbar {
-                width:0.2rem;
-                height:1rem;
-                transform: translate(0.4rem, 0rem);
-            }
+      .active {
+        background-color: blue;
+      }
 
-            .lastbar {
-                width:0.2rem;
-                height:1rem;
-                transform: translate(0.4rem, -2rem);
-            }
-
-            .active {
-                background-color: blue;
-            }
-
-            .inactive {
-                background-color: lightgray;
-            }
-
-        }
-        .activeText {
-            color:blue;
-        }
-
-        .inactiveText {
-            color:gray;
-        }
-
-        .details {
-            display: flex;
-            flex-direction: row;
-        }
-        .action {
-            .btn {
-                transform: translate(0, -0.3rem);
-                margin:0 0.5rem;
-                background-color: blue;
-                color:white;
-                padding: 0.3rem 0.5rem;
-            }
-
-            .icon {
-                color: white;
-                font-size: 1rem;
-                margin:0 0.5rem;
-                border-radius: 50%;
-                background-color: greenyellow;
-            }
-        }
+      .inactive {
+        background-color: lightgray;
+      }
     }
+    .activeText {
+      color: blue;
+    }
+
+    .inactiveText {
+      color: gray;
+    }
+
+    .details {
+      display: flex;
+      flex-direction: row;
+    }
+    .action {
+      .btn {
+        transform: translate(0, -0.3rem);
+        margin: 0 0.5rem;
+        background-color: blue;
+        color: white;
+        padding: 0.3rem 0.5rem;
+      }
+
+      .icon {
+        color: white;
+        font-size: 1rem;
+        margin: 0 0.5rem;
+        border-radius: 50%;
+        background-color: greenyellow;
+      }
+    }
+  }
 }
-
-
-

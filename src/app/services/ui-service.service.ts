@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
-import { FilterType, TaskType } from '../types';
+import { FilterType, TaskType, trackType } from '../types';
 import { GlobalStatesService } from './global-states.service';
 import { StorageKeys, StorageService } from './storage.service';
 
@@ -16,6 +16,19 @@ export class UiServiceService {
 
   private currentRequestData: TaskType = null;
   private currentRequestDataSubject = new Subject<TaskType>();
+
+  public tracksAfterRequestAccept: trackType[] = [
+    { title: 'Request Accepted', isDone: true },
+    { title: 'Destination Reached', isDone: false },
+    { title: 'Filled Details', isDone: false },
+    { title: 'Pickup Done', isDone: false },
+  ];
+
+  private currentTracks: trackType[] = this.tracksAfterRequestAccept;
+  private currentTracksSubject = new Subject<trackType[]>();
+
+  private currentTabHeadingMsg: string = '';
+  private currentTabHeadingMsgSubject = new Subject<string>();
 
   constructor(
     private globalStateService: GlobalStatesService,
@@ -59,5 +72,20 @@ export class UiServiceService {
       //check for time >>> pending
       this.setCurrentRequestData(data.data);
     });
+  }
+
+  setCurrentTrack(tracks: trackType[]) {
+    this.currentTracks = tracks;
+    this.currentTracksSubject.next(this.currentTracks);
+  }
+  onChangeCurrentTrack(): Observable<trackType[]> {
+    return this.currentTracksSubject.asObservable();
+  }
+  setCurrentTabHeadingMsg(msg: string) {
+    this.currentTabHeadingMsg = msg;
+    this.currentTabHeadingMsgSubject.next(this.currentTabHeadingMsg);
+  }
+  onChangeCurrentTabHeadingMsg(): Observable<string> {
+    return this.currentTabHeadingMsgSubject.asObservable();
   }
 }

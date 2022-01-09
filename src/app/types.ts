@@ -25,3 +25,8 @@ export type TaskType = {
   timestamp: string;
   expireTime: string;
 };
+
+export type trackType = {
+  title: string;
+  isDone: boolean;
+};

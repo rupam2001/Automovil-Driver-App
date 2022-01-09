@@ -13,6 +13,8 @@ import { CameraComponent } from './camera/camera.component';
 import { FiltersComponent } from './filters/filters.component';
 import { DetailsCardComponent } from './details-card/details-card.component';
 import { TrackerComponent } from './tracker/tracker.component';
+import { EstimatedTimeComponent } from './estimated-time/estimated-time.component';
+import { DropDownInputComponent } from './drop-down-input/drop-down-input.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import { TrackerComponent } from './tracker/tracker.component';
     CameraComponent,
     FiltersComponent,
     DetailsCardComponent,
-    TrackerComponent
+    TrackerComponent,
+    EstimatedTimeComponent,
+    DropDownInputComponent,
   ],
   imports: [CommonModule, IonicModule],
   exports: [
@@ -42,7 +46,9 @@ import { TrackerComponent } from './tracker/tracker.component';
     CameraComponent,
     FiltersComponent,
     DetailsCardComponent,
-    TrackerComponent
+    TrackerComponent,
+    EstimatedTimeComponent,
+    DropDownInputComponent,
   ],
 })
 export class ComponentsModule {}

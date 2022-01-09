@@ -19,6 +19,10 @@ const routes: Routes = [
         (m) => m.UploadproofPageModule
       ),
   },
+  {
+    path: 'car-details',
+    loadChildren: () => import('./screens/car-details/car-details.module').then( m => m.CarDetailsPageModule)
+  },
   // {
   //   path: 'current-booking',
   //   loadChildren: () => import('./screens/current-booking/current-booking.module').then( m => m.CurrentBookingPageModule)

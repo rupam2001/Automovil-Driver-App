@@ -1,6 +1,7 @@
 <div class="mainContainer">
   <div class="bar"></div>
-  <h3 class="cardHeading" (click)="showContent = !showContent">Tracking details
+  <h3 class="cardHeading" (click)="showContent = !showContent">
+    Tracking details
     <span class="iconContainer" *ngIf="!showContent">
       <ion-icon name="caret-down-circle"></ion-icon>
     </span>
@@ -12,50 +13,39 @@
 
   <!-- trackings -->
   <div class="trackingContainer" *ngIf="showContent">
-    <div class="taskContainer">
+    <div class="taskContainer" *ngFor="let track of tracks; let count = index">
       <div class="progressContainer">
-        <div class="circle active"></div>
-        <div class="firstbar active"></div>
+        <div
+          class="circle"
+          [ngClass]="{ active: track.isDone, inactive: !track.isDone }"
+        ></div>
+        <div
+          [ngClass]="{
+            active: track.isDone,
+            inactive: !track.isDone,
+            firstbar: count == 0,
+            lastbar: count == track.length - 1,
+            bar: count > 0 && count < track.length - 1
+          }"
+        ></div>
       </div>
       <div class="details">
-        <div class="taskName activeText">
-          Fix 1
+        <div class="taskName" [ngClass]="{ activeText: track.isDone }">
+          {{ track.title }}
         </div>
         <div class="action">
-          <!-- <button class="btn">Done</button> -->
-          <ion-icon class="icon" name="checkmark-done-circle-outline"></ion-icon>
-        </div>
-      </div>
-    </div>
-
-
-    <div class="taskContainer">
-      <div class="progressContainer">
-        <div class="circle inactive"></div>
-        <div class="bar inactive"></div>
-      </div>
-      <div class="details">
-        <div class="taskName inactiveText">
-          Upload photo
-        </div>
-        <div class="action">
-          <button class="btn" (click)="navigate()">Upload</button>
-        </div>
-      </div>
-    </div>
-
-
-    <div class="taskContainer">
-      <div class="progressContainer">
-        <div class="circle inactive"></div>
-        <div class="lastbar inactive"></div>
-      </div>
-      <div class="details">
-        <div class="taskName inactiveText">
-          lorem ipsum
-        </div>
-        <div class="action">
-          <!-- <button class="btn">Done</button> -->
+          <button
+            class="btn"
+            *ngIf="!track.isDone"
+            (click)="onClickDone(track)"
+          >
+            Done
+          </button>
+          <ion-icon
+            class="icon"
+            name="checkmark-done-circle-outline"
+            *ngIf="track.isDone"
+          ></ion-icon>
         </div>
       </div>
     </div>

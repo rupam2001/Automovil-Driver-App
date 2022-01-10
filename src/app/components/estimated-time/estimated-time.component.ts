@@ -18,4 +18,7 @@ export class EstimatedTimeComponent implements OnInit {
   onClickContinue() {
     this.modalController.dismiss({ continue: true, markascomplete: false });
   }
+  onClickMarkAsComplete() {
+    this.modalController.dismiss({ continue: false, markascomplete: true });
+  }
 }

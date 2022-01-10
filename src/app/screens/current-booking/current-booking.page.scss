@@ -9,3 +9,23 @@
   font-weight: bold;
   font-size: 1.7rem;
 }
+.task-complete-container {
+  width: 100%;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  ion-icon {
+    color: #1dd30e;
+    font-size: 2rem;
+    margin: 0.5rem;
+  }
+  h1 {
+    color: var(--blue);
+  }
+  .wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

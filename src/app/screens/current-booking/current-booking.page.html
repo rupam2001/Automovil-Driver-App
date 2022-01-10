@@ -1,14 +1,23 @@
 <ion-content>
   <div class="container">
     <h3 class="cardHeading">{{headMsg}}</h3>
-    <app-details-card [header]="header"></app-details-card>
-    <app-tracker></app-tracker>
+    <app-details-card
+      [header]="header"
+      *ngIf="!taskCompleted"
+    ></app-details-card>
+    <app-tracker *ngIf="!taskCompleted"></app-tracker>
     <ion-button
       class="large-btn btn-outline"
       [ngClass]="{'btn-blue': unAbleNotificationBtn}"
-      *ngIf="showNotificationBtn"
+      *ngIf="showNotificationBtn && !taskCompleted"
       (click)="onClickSendNotification()"
       >Send Notification</ion-button
     >
+    <div class="task-complete-container">
+      <div class="wrapper">
+        <ion-icon name="checkmark-circle"></ion-icon>
+        <h1>Task Completed!</h1>
+      </div>
+    </div>
   </div>
 </ion-content>

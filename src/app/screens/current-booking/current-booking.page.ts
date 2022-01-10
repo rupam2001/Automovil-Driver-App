@@ -18,6 +18,8 @@ export class CurrentBookingPage implements OnInit {
   unAbleNotificationBtn = false;
   headMsg = '';
 
+  taskCompleted: boolean = false;
+
   constructor(
     private uiService: UiServiceService,
     private modalController: ModalController
@@ -54,6 +56,7 @@ export class CurrentBookingPage implements OnInit {
   }
 
   async showEstimatedTimeModalAsync() {
+    this.uiService.setCurrentTabHeadingMsg('');
     const modal = await this.modalController.create({
       component: EstimatedTimeComponent,
       componentProps: {
@@ -66,11 +69,13 @@ export class CurrentBookingPage implements OnInit {
     modal.present();
     modal.onDidDismiss().then((data) => {
       if (data.data.continue) {
+      } else if (data.data.markascomplete) {
+        this.taskCompleted = true;
       }
     });
   }
 
   ngOnInit() {
-    // this.showEstimatedTimeModalAsync();
+    this.showEstimatedTimeModalAsync();
   }
 }

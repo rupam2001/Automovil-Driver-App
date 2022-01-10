@@ -10,17 +10,11 @@
     </span>
   </div>
   <div class="btn-container">
-    <!-- <app-button
-      title="Mark as complete and leave"
-      isActive="true"
-      [ngStyle]="{ color: 'red' }"
-      (click)="onClickContinue()"
-    ></app-button>
-    <app-button
-      title="Continue"
-      isActive="true"
-    ></app-button> -->
-    <button class="btn btn-blueline" *ngIf="isShowTaskCompletePart">
+    <button
+      class="btn btn-blueline"
+      *ngIf="isShowTaskCompletePart"
+      (click)="onClickMarkAsComplete()"
+    >
       <ion-icon name="checkmark-circle-outline" class="mark-icon"></ion-icon>
       Mark as complete and leave
     </button>

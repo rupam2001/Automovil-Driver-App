@@ -8,41 +8,57 @@
       <app-drop-down-input
         label="Car Make"
         [options]="carMakeList"
+        (onSelect)="onSelectMakeList($event)"
       ></app-drop-down-input>
     </div>
     <div class="input-container">
       <app-drop-down-input
         label="Car Model"
         [options]="carModelsList"
+        (onSelect)="onSelectCarModel($event)"
       ></app-drop-down-input>
     </div>
     <div class="input-container">
       <app-drop-down-input
         label="Car Type"
         [options]="carTypesList"
+        (onSelect)="onSelectCarType($event)"
       ></app-drop-down-input>
     </div>
     <div class="input-container">
       <ion-item>
         <ion-label position="floating">Mileage</ion-label>
-        <ion-input></ion-input>
+        <ion-input
+          type="number"
+          (change)="onChangeMileage($event.target.value)"
+        ></ion-input>
       </ion-item>
     </div>
     <div class="input-container">
       <ion-item>
         <ion-label position="floating">Run</ion-label>
-        <ion-input></ion-input>
+        <ion-input
+          type="number"
+          (change)="onChangeRun($event.target.value)"
+        ></ion-input>
       </ion-item>
     </div>
-
-    <app-camera></app-camera>
+    <div class="cam-container" *ngFor="let photo of numPhotos">
+      <app-camera
+        title="{{photo}}"
+        (onImageCaptured)="onImageClick($event)"
+      ></app-camera>
+    </div>
     <br />
     <br />
     <ion-button
       class="large-btn"
       [ngClass]="{'btn-outline': !unableUpload, 'btn-blue':unableUpload}"
+      (click)="onClickUpload()"
     >
       Upload</ion-button
     >
+    <br />
+    <br />
   </div>
 </ion-content>

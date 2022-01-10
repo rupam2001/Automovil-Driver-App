@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-drop-down-input',
@@ -8,12 +8,15 @@ import { Component, Input, OnInit } from '@angular/core';
 export class DropDownInputComponent implements OnInit {
   @Input() label: string;
   @Input() options: string[] = [];
-  @Input() selectedOption: string = 'hello';
+  @Input() selectedOption: string = '';
+  @Output() onSelect: EventEmitter<string> = new EventEmitter();
+
   constructor() {}
 
   ngOnInit() {}
 
-  onChange(event) {
-    this.selectedOption = event.target.value;
+  onChange(option) {
+    // alert(option);
+    this.onSelect.emit(option);
   }
 }

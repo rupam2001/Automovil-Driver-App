@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
+import { UiServiceService } from 'src/app/services/ui-service.service';
 
 @Component({
   selector: 'app-estimated-time',
@@ -8,7 +9,13 @@ import { ModalController } from '@ionic/angular';
 })
 export class EstimatedTimeComponent implements OnInit {
   @Input() modalController: ModalController;
-  constructor() {}
+  @Input() estimatedTime: string = '02:00';
+  isShowTaskCompletePart: boolean = true;
+
+  constructor(private uiService: UiServiceService) {}
 
   ngOnInit() {}
+  onClickContinue() {
+    this.modalController.dismiss({ continue: true, markascomplete: false });
+  }
 }

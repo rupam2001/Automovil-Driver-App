@@ -1,3 +1,32 @@
-<p>
-  estimated-time works!
-</p>
+<div class="container">
+  <div class="head">
+    <div class="bar"></div>
+    <h2>Estimated Time</h2>
+    <p>(in hours)</p>
+  </div>
+  <div class="time-container">
+    <span>
+      {{ estimatedTime }}
+    </span>
+  </div>
+  <div class="btn-container">
+    <!-- <app-button
+      title="Mark as complete and leave"
+      isActive="true"
+      [ngStyle]="{ color: 'red' }"
+      (click)="onClickContinue()"
+    ></app-button>
+    <app-button
+      title="Continue"
+      isActive="true"
+    ></app-button> -->
+    <button class="btn btn-blueline" *ngIf="isShowTaskCompletePart">
+      <ion-icon name="checkmark-circle-outline" class="mark-icon"></ion-icon>
+      Mark as complete and leave
+    </button>
+
+    <button class="btn btn-blueline btn-filled" (click)="onClickContinue()">
+      Continue
+    </button>
+  </div>
+</div>

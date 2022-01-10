@@ -22,6 +22,7 @@ export class UiServiceService {
     { title: 'Destination Reached', isDone: false },
     { title: 'Filled Details', isDone: false },
     { title: 'Pickup Done', isDone: false },
+    { title: 'Reached Garage', isDone: false },
   ];
 
   private currentTracks: trackType[] = this.tracksAfterRequestAccept;

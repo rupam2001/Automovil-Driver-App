@@ -70,5 +70,7 @@ export class CurrentBookingPage implements OnInit {
     });
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    // this.showEstimatedTimeModalAsync();
+  }
 }

@@ -40,7 +40,11 @@ export class FiltersComponent implements OnInit {
       .onDisabledFilterChange()
       .subscribe((_filter) => (this.disabledFilter = _filter));
   }
-  ngOnInit() {}
+  ngOnInit() {
+    if (this.router.url == '/home/current-booking') {
+      this.uiService.setActiveFilter({ title: 'Current' });
+    }
+  }
   onClickFilter(filter: FilterType) {
     this.globalStatesService.setCurrentActiveFilter(filter);
     this.uiService.setActiveFilter(filter);

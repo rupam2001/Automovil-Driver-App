@@ -20,7 +20,7 @@ export class CameraComponent implements OnInit {
 
   async onClickCameraAsync() {
     const { filePath } = await this.takePicture();
-    this.onImageCaptured.emit({ filePath, fix: this.title });
+    this.onImageCaptured.emit({ filePath, id: this.title });
     this.btnText = 'RETAKE';
   }
 

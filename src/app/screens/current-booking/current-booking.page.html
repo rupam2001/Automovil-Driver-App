@@ -13,7 +13,7 @@
       (click)="onClickSendNotification()"
       >Send Notification</ion-button
     >
-    <div class="task-complete-container">
+    <div class="task-complete-container" *ngIf="taskCompleted">
       <div class="wrapper">
         <ion-icon name="checkmark-circle"></ion-icon>
         <h1>Task Completed!</h1>

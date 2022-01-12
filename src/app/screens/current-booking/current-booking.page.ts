@@ -27,7 +27,7 @@ export class CurrentBookingPage implements OnInit {
     this.currentTracks = this.uiService.tracksAfterRequestAccept;
     this.uiService.onChangeCurrentTrack().subscribe((_tracks) => {
       if (_tracks.filter((t) => !t.isDone).length == 0) {
-        //all tasks inside track has been completed
+        // all tasks inside track has been completed
         this.unAbleNotificationBtn = true;
       }
       this.currentTracks = _tracks;
@@ -41,6 +41,7 @@ export class CurrentBookingPage implements OnInit {
       .subscribe((msg) => (this.headMsg = msg));
   }
   onClickSendNotification() {
+    if (!this.unAbleNotificationBtn) return;
     //api call here
     this.uiService.setCurrentTabHeadingMsg('Waiting For Garage Response');
     this.unAbleNotificationBtn = false;
@@ -69,6 +70,12 @@ export class CurrentBookingPage implements OnInit {
     modal.present();
     modal.onDidDismiss().then((data) => {
       if (data.data.continue) {
+        //
+        const nextTracks: trackType[] = [
+          { title: 'Car Pickedup from Garage', isDone: false },
+          { title: 'Car droped at owner', isDone: false },
+        ];
+        this.uiService.setCurrentTrack(nextTracks);
       } else if (data.data.markascomplete) {
         this.taskCompleted = true;
       }
@@ -76,6 +83,6 @@ export class CurrentBookingPage implements OnInit {
   }
 
   ngOnInit() {
-    this.showEstimatedTimeModalAsync();
+    // this.showEstimatedTimeModalAsync();
   }
 }
